@@ -1,0 +1,14 @@
+<form class="search-form" method="post" role="search" title="{{ esc_html__('Search...', 'makai') }}">
+    <input class="input-field" name="s" placeholder="{{ esc_attr__('Search', 'makai') }}" value="{{ search_query|default('') }}" autocomplete="off">
+  
+    
+    <input type="hidden" value="product" name="post_type">
+
+    <div class="loader-animation"></div>
+  
+    <button class="submit" type="submit">
+        <i class="icon far fa-search"></i>
+    </button>
+</form>
+  
+<div class="result-container modal-filters"></div>

@@ -1,0 +1,4 @@
+node_modules/
+src/prompt.*
+src/scripts/prompt.*
+src/styles/prompt.*

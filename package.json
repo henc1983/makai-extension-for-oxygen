@@ -1,0 +1,33 @@
+{
+  "name": "Makai Extensions for Oxygen Builder 6",
+  "version": "1.0.0",
+  "description": "Oxygen 6 extensions by Makai Henrik",
+  "main": "/src/scripts/main.js",
+  "keywords": [
+    "wordpress",
+    "oxygen builder",
+    "storefront"
+  ],
+  "author": "Makai Henrik",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "autoprefixer": "^10.4.22",
+    "babelify": "^10.0.0",
+    "browser-sync": "^3.0.4",
+    "browserify": "^17.0.1",
+    "cssnano": "^7.1.2",
+    "gulp": "^5.0.1",
+    "gulp-all": "^1.1.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-postcss": "^10.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglify-es": "^3.0.0",
+    "postcss-cli": "^11.0.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
+    "watchify": "^4.0.0"
+  }
+}

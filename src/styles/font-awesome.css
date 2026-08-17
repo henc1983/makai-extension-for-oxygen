@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'Font Awesome 6';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("../fonts/FontAwesome6.woff2") format("woff2");
+}
+
+.far, .fa-regular {
+    font-family: "Font Awesome 6";
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+    font-weight: 400;    
+}
+
+.fa-user::before {
+    content: "\f007";
+}
+
+.fa-heart::before {
+    content: "\f004";
+}
+
+.fa-earth-africa::before, .fa-globe-africa::before {
+    content: "\f57c";
+}
+
+.fa-shopping-cart::before, .fa-cart::before {
+    content: "\f07a";
+}
+
+.fa-shop::before {
+    content: "\f54f";
+}
+
+.fa-map-location::before {
+    content: "\f59f";
+}
+
+.fa-chevron-down::before {
+    content: "\f078";
+}
+
+.fa-envelope::before {
+    content: "\f0e0";
+}
+
+.fa-phone::before {
+    content: "\f879";
+}
+
+.fa-credit-card::before {
+    content: "\f09d";
+}
+
+.fa-copy::before {
+    content: "\f0c5";
+}
+
+.fa-search::before {
+    content: "\f002";
+}
+
+.fa-cash-register::before {
+    content: "\f788";
+}
+
+.fa-close::before {
+    content: "\f00d";
+}
+
+.fa-bars::before {
+    content: "\f550";
+}
+
+.fa-rotate-left::before {
+    content: "\e331";
+}
+
+.fa-circle-check::before {
+    content: "\f058";
+}
+
+.fa-check::before {
+    content: "\f00c";
+}
+
+.fa-circle-xmark::before {
+    content: "\f057";
+}
+
+.fa-magic::before {
+    content: "\e2ca";
+}
+
+.fa-infinity::before {
+    content: "\f534";
+}
