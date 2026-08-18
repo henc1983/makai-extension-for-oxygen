@@ -60,4 +60,12 @@ function ajax_searchbar() {
 
 function withrawal() {
 
+    $last_name = isset( $_POST['last_name'] ) ? sanitize_text_field( $_POST['last_name'] ) : '';
+    $first_name = isset( $_POST['first_name'] ) ? sanitize_text_field( $_POST['first_name'] ) : '';
+    $email = isset( $_POST['email'] ) ? sanitize_text_field( $_POST['email'] ) : '';
+    $return_scope = isset( $_POST['return_scope'] ) ? sanitize_text_field( $_POST['return_scope'] ) : '';
+    $products = isset( $_POST['products'] ) ? sanitize_text_field( $_POST['products'] ) : '';
+    
+    wp_send_json_success([ 'response' => 'ok', 'email_sent' => true ]);
+    exit();
 }

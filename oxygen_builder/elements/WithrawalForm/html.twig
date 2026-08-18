@@ -1,12 +1,12 @@
-<form class="return-form" method="post">
+<form class="return-form form" name="return-form" method="post">
   <!-- Vezetéknév és Keresztnév egy sorban -->
   <div class="row">
     <div class="input-group">
-      <input type="text" id="last-name" placeholder=" " required />
+      <input type="text" id="last-name" name="last_name" placeholder=" " required />
       <label for="last-name">Vezetéknév <span class="required">*</span></label>
     </div>
     <div class="input-group">
-      <input type="text" id="first-name" placeholder=" " required />
+      <input type="text" id="first-name" name="first_name" placeholder=" " required />
       <label for="first-name">Keresztnév <span class="required">*</span></label>
     </div>
   </div>
@@ -14,7 +14,7 @@
   <!-- Rendelésszám -->
   <div class="input-group-wrapper">
     <div class="input-group">
-      <input type="text" id="order-number" placeholder=" " required />
+      <input type="text" id="order-number" name="order_number" placeholder=" " required />
       <label for="order-number">Rendelésszám <span class="required">*</span></label>
     </div>
     <p class="input-hint">A rendelés azonosítója. A rendelés visszaigazoló e-mailben található, rendelést azonosító szám.</p>
@@ -25,7 +25,7 @@
   <!-- E-mail cím -->
   <div class="input-group-wrapper">
     <div class="input-group">
-      <input type="email" id="email" placeholder=" " required />
+      <input type="email" id="email" name="email" placeholder=" " required />
       <label for="email">E-mail cím <span class="required">*</span></label>
     </div>
     <p class="input-hint"><strong>Fontos!</strong> Csak akkor tudjuk azonosítani az elállási szándékot, ha a rendelés során használt e-mail cím kerül megadásra.</p>
@@ -36,12 +36,12 @@
     <p class="radio-title">Mire vonatkozik az elállás? <span class="required">*</span></p>
     <div class="radio-options">
       <label class="radio-btn checked">
-        <input type="radio" name="return-scope" value="full" checked />
+        <input type="radio" name="return_scope" value="full" checked />
         <i class="far fa-circle-check"></i>
         <span>Teljes rendelés</span>
       </label>
       <label class="radio-btn ">
-        <input type="radio" name="return-scope" value="partial" id="trigger-products" />
+        <input type="radio" name="return_scope" value="partial" id="trigger-products" />
         <i class="far fa-circle-xmark"></i>
         <span>Csak bizonyos termékek</span>
       </label>
@@ -51,7 +51,7 @@
   <!-- Dinamikus termékmező -->
   <div class="input-group-wrapper hidden" id="products-wrapper">
     <div class="input-group">
-      <input type="text" id="products" placeholder=" " />
+      <input type="text" id="products" name="products" placeholder=" " />
       <label for="products">Melyik terméktől történik az elállás? <span class="required">*</span></label>
     </div>
     <p class="input-hint">Több termék esetén a terméknevek vesszővel elválasztva.</p>

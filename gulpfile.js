@@ -12,7 +12,8 @@ const gulp          = require("gulp"),
     uglifyEs      = require('gulp-uglify-es').default,
     CSSFILES      = [ 'main', 'font-awesome' ],
     JSFILES       = [ 'main', 'shop' ];
-    COMPONENT_JSFILES = [ 'searchbar', 'dropdown', 'withrawal' ];
+    COMPONENT_CSSFILES = [ 'forms' ];
+    COMPONENT_JSFILES = [ 'searchbar', 'dropdown', 'withrawal', 'forms' ];
 
 JSFILES.forEach( (js) => {
     gulp.task( `dev:js-${js}`, () => {
@@ -64,6 +65,21 @@ COMPONENT_JSFILES.forEach( (js) => {
     } )
 } );
 
+COMPONENT_CSSFILES.forEach( (css) => {
+    gulp.task( `dev:css-${css}-component`, () => {
+        return gulp.src( `src/styles/components/${css}.css` )
+        .pipe(sourcemaps.init())
+        .pipe(postcss([
+            require('autoprefixer'),
+            cssnano(),
+        ]))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest("assets/styles/components"))
+        .pipe(browserSync.stream());
+
+    } )
+} );
+
 CSSFILES.forEach( (css) => {
     gulp.task( `dev:css-${css}`, () => {
         return gulp.src( `src/styles/${css}.css` )
@@ -91,6 +107,10 @@ gulp.task('default' , () => {
 
     COMPONENT_JSFILES.forEach( (js) => {
         gulp.watch( watchJSFiles , gulp.parallel( `dev:js-${js}-component` ) );
+    } );
+    
+    COMPONENT_CSSFILES.forEach( (css) => {
+        gulp.watch( watchCSSFiles , gulp.parallel( `dev:css-${css}-component` ) );
     } );
     
     CSSFILES.forEach( (css) => {
