@@ -20,7 +20,7 @@ function wp_enqueue_scripts() {
         $script = basename( $file );
 
 
-        wp_register_script( "mex-{$key}-script" , MEX_PLUGIN_URI . "$script_dir/$script" , ['jquery'] , WP_DEBUG ? filemtime( MEX_PLUGIN_DIR . "$script_dir/$script" ) : MEX_FOR_OXYGEN_VERSION, true );
+        wp_register_script( "mex-{$key}-script" , MEX_PLUGIN_URI . "$script_dir/$script" , ['jquery'] , WP_DEBUG ? filemtime( MEX_PLUGIN_DIR . "$script_dir/$script" ) : MEX_VERSION, true );
         
     }
 
@@ -40,7 +40,7 @@ function wp_enqueue_styles() {
         $style = basename( $file );
 
 
-        wp_register_style( "mex-{$key}-style" , MEX_PLUGIN_URI . "$style_dir/$style" , [] , WP_DEBUG ? filemtime( MEX_PLUGIN_DIR . "$style_dir/$style" ) : MEX_FOR_OXYGEN_VERSION );
+        wp_register_style( "mex-{$key}-style" , MEX_PLUGIN_URI . "$style_dir/$style" , [] , WP_DEBUG ? filemtime( MEX_PLUGIN_DIR . "$style_dir/$style" ) : MEX_VERSION );
         
     }
 
