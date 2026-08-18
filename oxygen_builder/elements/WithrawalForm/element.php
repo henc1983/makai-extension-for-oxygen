@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById(\'products-wrapper\').classList.add(\'hidden\');
   }
 });
-'],],];
+'],'styles' => ['%%BREAKDANCE_REUSABLE_MEXFORMSCSS%%'],],];
     }
 
     static function settings()
