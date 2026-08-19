@@ -55,3 +55,4 @@ require_once MEX_PLUGIN_DIR . '/inc/enqueue.php';
 require_once MEX_PLUGIN_DIR . '/inc/ajax_handlers.php';
 require_once MEX_PLUGIN_DIR . '/inc/elements_register.php';
 require_once MEX_PLUGIN_DIR . '/inc/reusable_dependencies.php';
+require_once MEX_PLUGIN_DIR . '/inc/update.php';
