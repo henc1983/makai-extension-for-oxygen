@@ -1,13 +1,28 @@
-.radio-btn.checked {
-  /* background-color: #ffcc00; */
+.mex-withrawal > .form .radio-btn.checked {
   background-color: var(--secondary-color);
   color: white;
 }
 
-.submit-btn {
+.mex-withrawal > .form .submit-btn {
+  display: flex;
+  flex-wrap: nowrap;
   background-color: var(--secondary-color);
+  transition: all 0.2s;
 }
 
-.submit-btn:hover {
+.mex-withrawal > .form .submit-btn:hover {
   background-color: color-mix(in srgb,  var(--secondary-color) 80%, #fff);
+}
+
+.mex-withrawal > .form .loader-animation {
+  width: 0px !important;
+  border: 0px solid #fff !important;
+  transition: all .2s;
+  margin-rigth: 0;
+}
+
+.mex-withrawal > .form .loader-animation.show {
+ border-width: 2px !important;
+ width: 20px !important;
+ margin-right: .5em;
 }

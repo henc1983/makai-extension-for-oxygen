@@ -1,3 +1,8 @@
+<div class="notification-wrapper hidden">
+  <h3 class="title"></h3>
+  <p class="message"></p>
+</div>
+
 <form class="return-form form" name="return-form" method="post">
   <!-- Vezetéknév és Keresztnév egy sorban -->
   <div class="row">
@@ -41,15 +46,16 @@
         <span>Teljes rendelés</span>
       </label>
       <label class="radio-btn ">
-        <input type="radio" name="return_scope" value="partial" id="trigger-products" />
+        <input type="radio" name="return_scope" value="partial" data-trigger="products" />
         <i class="far fa-circle-xmark"></i>
         <span>Csak bizonyos termékek</span>
       </label>
+     <input type="hidden" name="scope" value="full">
     </div>
   </div>
 
   <!-- Dinamikus termékmező -->
-  <div class="input-group-wrapper hidden" id="products-wrapper">
+  <div class="input-group-wrapper hidden products-wrapper">
     <div class="input-group">
       <input type="text" id="products" name="products" placeholder=" " />
       <label for="products">Melyik terméktől történik az elállás? <span class="required">*</span></label>
@@ -66,5 +72,5 @@
   </div>
 
   <!-- Küldés gomb -->
-  <button type="submit" class="submit-btn">Elállás megerősítése</button>
+  <button type="submit" class="submit-btn"><div class="loader-animation"></div>Elállás megerősítése</button>
 </form>

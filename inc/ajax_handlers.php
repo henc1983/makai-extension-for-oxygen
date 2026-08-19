@@ -62,10 +62,25 @@ function withrawal() {
 
     $last_name = isset( $_POST['last_name'] ) ? sanitize_text_field( $_POST['last_name'] ) : '';
     $first_name = isset( $_POST['first_name'] ) ? sanitize_text_field( $_POST['first_name'] ) : '';
-    $email = isset( $_POST['email'] ) ? sanitize_text_field( $_POST['email'] ) : '';
+    $order_number = isset( $_POST['order_number'] ) ? sanitize_text_field( $_POST['order_number'] ) : '';
     $return_scope = isset( $_POST['return_scope'] ) ? sanitize_text_field( $_POST['return_scope'] ) : '';
     $products = isset( $_POST['products'] ) ? sanitize_text_field( $_POST['products'] ) : '';
     
-    wp_send_json_success([ 'response' => 'ok', 'email_sent' => true ]);
+
+    $admin_email = get_option('admin_email');
+    $subject     = sprintf( __( 'Oops!, %s - order cancelled by customer!' , 'makai' ) , $order_number );
+    $message     = '';
+    $headers     = array( 'Content-Type: text/html; charset=UTF-8' );
+
+    $response_message_title = __( "We're sorry it turned out this way!" , 'makai' );
+    $response_message_message = ( $return_scope === 'partial' ) ? sprintf( __( 'We will be removing some products from your order %s.' , 'makai' ) , $order_number ) : sprintf( __( 'Your order %s will be cancelled soon.' , 'makai' ) , $order_number );
+
+    
+    
+    
+    $email_sent = wp_mail($admin_email, $subject, $message, $headers);
+    
+    wp_send_json_success([ 'response' => 'ok', 'email_sent' => $email_sent, 'message' => [ 'title' => $response_message_title , 'message' => $response_message_message ] ] );
+    
     exit();
 }

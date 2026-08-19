@@ -71,7 +71,7 @@ COMPONENT_CSSFILES.forEach( (css) => {
         .pipe(sourcemaps.init())
         .pipe(postcss([
             require('autoprefixer'),
-            cssnano(),
+            // cssnano(),
         ]))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest("assets/styles/components"))

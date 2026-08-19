@@ -1,10 +1,13 @@
+.form-wrapper {
+    max-width: 600px;
+    margin: 30px auto;
+}
+
 .form {
     display: flex;
     flex-direction: column;
     gap: 25px;
     color: #333;
-    max-width: 600px;
-    margin: 30px auto;
 }
 
 .form .row {
@@ -99,6 +102,8 @@
     height: 1px;
 }
 
+
+
 .form .hidden {
       display: none !important;
 }
@@ -127,4 +132,48 @@
     align-self: center;
     margin-top: 10px;
     transition: background-color 0.2s;
+}
+
+.form .submit-btn:disabled {
+    filter: grayscale(1);
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.form-wrapper .notification-wrapper {
+    max-height: auto;
+    opacity: 1;
+    width: 100%;
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    transition: all .2s;
+    padding: 18px 15px 14px 15px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+}
+
+.form-wrapper .notification-wrapper *{
+    margin: 0;
+}
+
+.form-wrapper .notification-wrapper .title{
+    font-size: 1.25rem;
+    margin-bottom: .5em;
+}
+
+.form-wrapper .notification-wrapper .message{
+    font-size: .875rem;
+}
+
+.form-wrapper .notification-wrapper.success {
+    background: color-mix(in srgb, aquamarine 90%, transparent);
+    box-shadow: 0 0 6px color-mix(in srgb, black 30%, transparent);
+}
+
+.form-wrapper .notification-wrapper.hidden {
+    margin-bottom: 0;
+    max-height: 0px;
+    opacity: 0;
+    visibility: hidden;
 }

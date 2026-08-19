@@ -157,7 +157,7 @@ class Withrawalform extends \Breakdance\Elements\Element
 
     static function additionalClasses()
     {
-        return false;
+        return [['name' => 'form-wrapper', 'template' => 'no']];
     }
 
     static function projectManagement()
