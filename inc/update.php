@@ -27,7 +27,7 @@ function update( $transient ) {
     }
 
     // 1. BEÁLLÍTÁSOK (Módosítsd a saját adataidra)
-    $plugin_slug     = 'makai-extensions-for-oxygen/makai-extension.php'; // Bővítmény fő fájlja
+    $plugin_slug     = 'makai-extension-for-oxygen/makai-extension.php'; // Bővítmény fő fájlja
     $github_user     = UPDATE_GITHUB_USER;          // GitHub felhasználóneved
     $github_repo     = UPDATE_GITHUB_REPO;                         // GitHub repó neve
     
@@ -61,7 +61,7 @@ function update( $transient ) {
 
         // 3. Verziók összehasonlítása
         if ( version_compare( $current_version, $remote_version, '<' ) ) {
-            $res = new stdClass();
+            $res = (object) [];
             $res->slug        = dirname( $plugin_slug );
             $res->plugin      = $plugin_slug;
             $res->new_version = $remote_version;
@@ -74,4 +74,33 @@ function update( $transient ) {
     }
 
     return $transient;
+}
+
+
+
+add_filter( 'upgrader_source_selection', '\MakaiExtensions\Update\github_plugin_fix_folder_name', 10, 4 );
+
+function github_plugin_fix_folder_name( $source, $remote_source, $upgrader, $hook_extra ) {
+    // Csak akkor fut le, ha bővítmény frissítésről van szó
+    if ( ! isset( $hook_extra['plugin'] ) ) {
+        return $source;
+    }
+
+    // A te bővítményed pontos mappa neve (cseréld ki a sajátodra!)
+    $correct_folder_name = 'makai-extension-for-oxygen'; 
+
+    // Megnézzük, hogy a frissített bővítmény-e az
+    if ( dirname( $hook_extra['plugin'] ) === $correct_folder_name ) {
+        $source_path = trailingslashit( $source );
+        $new_source_path = trailingslashit( $remote_source ) . $correct_folder_name;
+
+        // Ha a mappa neve eltér a helyestől (mert a GitHub átnevezte), akkor átnevezzük
+        if ( basename( $source ) !== $correct_folder_name ) {
+            if ( rename( $source, $new_source_path ) ) {
+                return trailingslashit( $new_source_path );
+            }
+        }
+    }
+
+    return $source;
 }
