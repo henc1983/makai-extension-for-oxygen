@@ -15,6 +15,8 @@ define( 'UPDATE_GITHUB_USER' , 'henc1983' );
 define( 'UPDATE_GITHUB_REPO' , 'makai-extension-for-oxygen' );
 define( 'UPDATE_GITHUB_TOKEN' , '' );
 
+// TODO needed to work this code because not working properly
+
 
 add_filter( 'pre_set_site_transient_update_plugins', '\MakaiExtensions\Update\update');
 
