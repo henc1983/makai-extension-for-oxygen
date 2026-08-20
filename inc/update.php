@@ -61,11 +61,7 @@ function update( $transient ) {
 
         // 3. Verziók összehasonlítása
         if ( version_compare( $current_version, $remote_version, '<' ) ) {
-<<<<<<< HEAD
             $res = (object) [];
-=======
-            $res = new \stdClass();
->>>>>>> refs/remotes/origin/main
             $res->slug        = dirname( $plugin_slug );
             $res->plugin      = $plugin_slug;
             $res->new_version = $remote_version;
