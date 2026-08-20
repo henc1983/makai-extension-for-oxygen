@@ -3,6 +3,10 @@
     margin: 30px auto;
 }
 
+.form-wrapper.small .form {
+    gap: 18px;
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -25,6 +29,10 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
+}
+
+.form-wrapper.small .form .input-group input {
+    padding: 14px 10px 12px 10px;
 }
 
 .form .input-group input {

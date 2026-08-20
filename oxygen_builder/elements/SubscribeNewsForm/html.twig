@@ -1,0 +1,37 @@
+<div class="notification-wrapper hidden">
+  <h3 class="title"></h3>
+  <p class="message"></p>
+</div>
+
+<form class="subscribe-form form" name="subscribe-form" method="post">
+  <!-- Vezetéknév és Keresztnév egy sorban -->
+  <div class="row">
+    <div class="input-group">
+      <input type="text" id="last-name" name="last_name" placeholder=" " required />
+      <label for="last-name">{{ esc_attr__("Last name" , "makai") }} <span class="required">*</span></label>
+    </div>
+    <div class="input-group">
+      <input type="text" id="first-name" name="first_name" placeholder=" " required />
+      <label for="first-name">{{ esc_html__("First name" , "makai") }} <span class="required">*</span></label>
+    </div>
+  
+  </div>
+
+  <div class="row">
+    <div class="input-group">
+      <input type="email" id="email" name="email" placeholder=" " required />
+      <label for="email"> {{ esc_html__("Email address" , "makai") }} <span class="required">*</span></label>
+    </div>
+    </div>
+
+  <!-- Adatkezelési checkbox -->
+  <div class="checkbox-group">
+    <input type="checkbox" id="terms" required />
+    <label for="terms">
+      {{ esc_html__("I declare that I have read and understood the data processing information and would like to be informed about the newsletters." , "makai") }} <span class="required">*</span>
+    </label>
+  </div>
+
+  <!-- Küldés gomb -->
+  <button type="submit" class="submit-btn"><div class="loader-animation"></div>{{ esc_html__("Subscribe" , "makai") }}</button>
+</form>
