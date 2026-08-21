@@ -5,6 +5,12 @@ namespace MakaiExtensions\Enqueue;
 
 
 
+
+defined('ABSPATH') or die('No script kiddies please!');
+
+
+
+
 add_action( 'wp_enqueue_scripts' , '\MakaiExtensions\Enqueue\wp_enqueue_scripts' );
 add_action( 'wp_enqueue_scripts' , '\MakaiExtensions\Enqueue\wp_enqueue_styles' );
 

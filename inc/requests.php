@@ -6,6 +6,12 @@ namespace MakaiExtensions\Requests;
 
 
 
+
+defined('ABSPATH') or die('No script kiddies please!');
+
+
+
+
 // Listing function names in array
 $my_requests = [ 'media_query_helper' ];
 

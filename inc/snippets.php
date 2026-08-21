@@ -5,6 +5,8 @@
 namespace MakaiExtensions\Snippets;
 
 
+defined('ABSPATH') or die('No script kiddies please!');
+
 
 add_action( 'wp_body_open' , '\MakaiExtensions\Snippets\mediaquery_helper_html' , -1 );
 

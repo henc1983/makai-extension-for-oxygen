@@ -6,6 +6,9 @@ namespace MakaiExtensions\Ajax;
 
 
 
+defined('ABSPATH') or die('No script kiddies please!');
+
+
 
 $my_ajax_requests = [ 'ajax_searchbar', 'withrawal' ];
 

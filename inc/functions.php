@@ -5,6 +5,12 @@ namespace MakaiExtensions\Functions;
 
 
 
+
+defined('ABSPATH') or die('No script kiddies please!');
+
+
+
+
 // Check Oxygen Builder Plugin is installed
 function is_oxygen_active() {
     return defined('__BREAKDANCE_PLUGIN_FILE__') && defined('BREAKDANCE_MODE') && BREAKDANCE_MODE === 'oxygen'; 

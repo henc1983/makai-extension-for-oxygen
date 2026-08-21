@@ -6,6 +6,9 @@ namespace MakaiExtensions\ElementsRegister;
 
 
 
+defined('ABSPATH') or die('No script kiddies please!');
+
+
 
 use function Breakdance\Util\getDirectoryPathRelativeToPluginFolder as getDirPath;
 use function Breakdance\ElementStudio\registerSaveLocation;
