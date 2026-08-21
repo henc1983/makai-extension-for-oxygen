@@ -1,10 +1,4 @@
-<div class="notification-wrapper hidden">
-  <h3 class="title"></h3>
-  <p class="message"></p>
-</div>
-
 <form class="return-form form" name="return-form" method="post">
-  <!-- Vezetéknév és Keresztnév egy sorban -->
   <div class="row">
     <div class="input-group">
       <input type="text" id="last-name" name="last_name" placeholder=" " required />
@@ -16,7 +10,6 @@
     </div>
   </div>
 
-  <!-- Rendelésszám -->
   <div class="input-group-wrapper">
     <div class="input-group">
       <input type="text" id="order-number" name="order_number" placeholder=" " required />
@@ -27,7 +20,6 @@
   
   </div>
 
-  <!-- E-mail cím -->
   <div class="input-group-wrapper">
     <div class="input-group">
       <input type="email" id="email" name="email" placeholder=" " required />
@@ -36,7 +28,6 @@
     <p class="input-hint"><strong>{{ esc_html__("Important!" , "makai" ) }}</strong> {{ esc_html__("We can only identify the intention to cancel if the e-mail address used during the order is entered." , "makai") }}</p>
   </div>
 
-  <!-- Rádiógombok (Kiválasztás) -->
   <div class="radio-section">
     <p class="radio-title">{{ esc_html__("What does the withdrawal apply to?" , "makai") }}<span class="required">*</span></p>
     <div class="radio-options">
@@ -54,7 +45,6 @@
     </div>
   </div>
 
-  <!-- Dinamikus termékmező -->
   <div class="input-group-wrapper hidden products-wrapper">
     <div class="input-group">
       <input type="text" id="products" name="products" placeholder=" " />
@@ -63,7 +53,6 @@
     <p class="input-hint">{{ esc_html__("In case of multiple products, the product names are separated by commas.", "makai") }}</p>
   </div>
 
-  <!-- Adatkezelési checkbox -->
   <div class="checkbox-group">
     <input type="checkbox" id="terms" required />
     <label for="terms">
@@ -72,6 +61,5 @@
     </label>
   </div>
 
-  <!-- Küldés gomb -->
   <button type="submit" class="submit-btn"><div class="loader-animation"></div>{{esc_html__("Confirm withdrawal" , "makai")}}</button>
 </form>

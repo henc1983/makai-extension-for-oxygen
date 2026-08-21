@@ -10,7 +10,7 @@ defined('ABSPATH') or die('No script kiddies please!');
 
 
 
-$my_ajax_requests = [ 'ajax_searchbar', 'withrawal' ];
+$my_ajax_requests = [ 'ajax_searchbar', 'withrawal', 'subscribtion' ];
 
 
 
@@ -80,6 +80,33 @@ function withrawal() {
 
     
     
+    
+    $email_sent = wp_mail($admin_email, $subject, $message, $headers);
+    
+    wp_send_json_success([ 'response' => 'ok', 'email_sent' => $email_sent, 'message' => [ 'title' => $response_message_title , 'message' => $response_message_message ] ] );
+    
+    exit();
+}
+
+
+
+
+
+function subscribtion() {
+
+    $last_name = isset( $_POST['last_name'] ) ? sanitize_text_field( $_POST['last_name'] ) : '';
+    $first_name = isset( $_POST['first_name'] ) ? sanitize_text_field( $_POST['first_name'] ) : '';
+    $email = isset( $_POST['email'] ) ? sanitize_text_field( $_POST['email'] ) : '';
+    
+
+    $admin_email = get_option('admin_email');
+    $subject     = sprintf( __( 'Hi! Congratulation, new customer has subscribed!' , 'makai' ) );
+    $message     = '';
+    $headers     = array( 'Content-Type: text/html; charset=UTF-8' );
+
+    $response_message_title = sprintf(__( "Dear %s, thank you for subscribing!" , 'makai' ) , $first_name);
+    $response_message_message = sprintf( __( 'Now on, you will also receive emails about new products and promotions.' , 'makai' ) );
+
     
     $email_sent = wp_mail($admin_email, $subject, $message, $headers);
     

@@ -148,40 +148,103 @@
     cursor: not-allowed;
 }
 
-.form-wrapper .notification-wrapper {
-    max-height: auto;
+
+#mex-notification-container {
+    position: fixed;
+    top: 10%;
+    right: 35px;
+    z-index: 9999;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.mex-notification-wrapper {
+    background: #ffffff;
     opacity: 1;
     width: 100%;
     visibility: visible;
     display: flex;
     flex-direction: column;
-    transition: all .2s;
-    padding: 18px 15px 14px 15px;
-    margin-bottom: 25px;
+    position: relative;
+    transition: all .3s ease;
+    padding: 14px 10px 12px 10px;
+    border-left: 4px solid transparent;
     border-radius: 8px;
-}
-
-.form-wrapper .notification-wrapper *{
-    margin: 0;
-}
-
-.form-wrapper .notification-wrapper .title{
-    font-size: 1.25rem;
-    margin-bottom: .5em;
-}
-
-.form-wrapper .notification-wrapper .message{
-    font-size: .875rem;
-}
-
-.form-wrapper .notification-wrapper.success {
-    background: color-mix(in srgb, aquamarine 90%, transparent);
+    box-sizing: border-box;
     box-shadow: 0 0 6px color-mix(in srgb, black 30%, transparent);
 }
 
-.form-wrapper .notification-wrapper.hidden {
-    margin-bottom: 0;
-    max-height: 0px;
+.mex-notification-wrapper * {
+    margin: 0;
+}
+
+.mex-notification-wrapper .title{
+    font-size: .875rem;
+    margin-bottom: .25em;
+}
+
+.mex-notification-wrapper .message{
+    font-size: .725rem;
+}
+
+.mex-notification-wrapper.hidden {
     opacity: 0;
+    transform: translateY(50px);
+    margin-top: -50px;
     visibility: hidden;
 }
+
+.mex-notification-wrapper .progressbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+
+.mex-notification-wrapper.success {
+    border-left-color: #4BB543;
+}
+
+
+.mex-notification-wrapper.success .progressbar{
+    background-color: #4BB543;
+}
+
+
+.mex-notification-wrapper.info {
+    border-left-color: #2777db;
+}
+
+
+.mex-notification-wrapper.info .progressbar{
+    background-color: #2777db;
+}
+
+
+.mex-notification-wrapper.warning {
+    border-left-color: oklch(79.5% 0.184 86.047);
+}
+
+
+.mex-notification-wrapper.warning .progressbar{
+    background-color: oklch(79.5% 0.184 86.047);
+}
+
+
+.mex-notification-wrapper.error {
+    border-left-color: oklch(63.7% 0.237 25.331);
+}
+
+
+.mex-notification-wrapper.error .progressbar{
+    background-color: oklch(63.7% 0.237 25.331);
+}
+

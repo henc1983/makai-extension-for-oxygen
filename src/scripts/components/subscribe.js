@@ -2,7 +2,7 @@ import PseudoGuid from "../commons/pseudo-guid";
 import MexForms from "../commons/forms";
 import MexNotification from "../commons/notification";
 
-class WithrawalForm extends MexForms {
+class SubscribeForm extends MexForms {
     constructor(elem) {
         super(elem);
 
@@ -11,10 +11,6 @@ class WithrawalForm extends MexForms {
         this.lName = this.elem.querySelector('input[name="last_name"]');
         this.fName = this.elem.querySelector('input[name="first_name"]');
         this.email = this.elem.querySelector('input[name="email"]');
-        this.orderNumber = this.elem.querySelector('input[name="order_number"]');
-        this.products = this.elem.querySelector('input[name="products"]');
-        
-        this.productWrapper = this.elem.querySelector('.products-wrapper');
     }
 
 
@@ -27,16 +23,10 @@ class WithrawalForm extends MexForms {
         super.onSubmit(e);
 
         const formData = new FormData();
-        formData.append('action', 'withrawal');
+        formData.append('action', 'subscribtion');
         formData.append('last_name', this.lName.value );
         formData.append('first_name', this.fName.value );
-        formData.append('order_number', this.orderNumber.value );
-        formData.append('email', this.email.value );
-        formData.append('return_scope', this.elem.querySelector('input:checked[name="return_scope"]').value );
-        
-        if( this.elem.querySelector('input:checked[name="return_scope"]').value === 'partial' ) {
-            formData.append('products', this.products.value );
-        }
+        formData.append('email', this.email.value );        
 
         try {
             const response = await fetch("/wp-admin/admin-ajax.php", {
@@ -49,7 +39,7 @@ class WithrawalForm extends MexForms {
             const html = await response.json();
             
             if( html.data.response === 'ok' ) {
-                new MexNotification( html.data.message.title , html.data.message.message, 'warning' );
+                new MexNotification(html.data.message.title, html.data.message.message);
             }
             
         } catch (error) {
@@ -58,34 +48,16 @@ class WithrawalForm extends MexForms {
             this.hideLoader();
             this.submitBtn.setAttribute('disabled', 'disabled');
             setTimeout(()=>this.clearAll(),5000);
+            
         }
 
     }
-
-    radioBtnChange(e) {
-        super.radioBtnChange(e);
-
-        if( e.target.closest('.radio-btn').querySelector('[name="return_scope"]').value === 'partial' ) {
-            this.productWrapper.classList.remove('hidden');
-            this.products.setAttribute('required', 'required');
-            this.products.value = '';
-
-            return false;
-        }
-
-        this.productWrapper.classList.add('hidden');
-        this.products.removeAttribute('required');
-
-        return false;
-
-    }
-
 }
 
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const withrawalElements = document.querySelectorAll('.mex-withrawal');
+    const withrawalElements = document.querySelectorAll('.mex-subscribe-news-form');
     
     
     withrawalElements.forEach( (elem) => {
@@ -94,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             elem.setAttribute('id' , PseudoGuid.GetNew() );
         }
 
-        new WithrawalForm( document.getElementById(elem.getAttribute('id') ) );
+        new SubscribeForm( document.getElementById(elem.getAttribute('id') ) );
     });
     
 });

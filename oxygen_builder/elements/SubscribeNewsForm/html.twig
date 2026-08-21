@@ -1,10 +1,4 @@
-<div class="notification-wrapper hidden">
-  <h3 class="title"></h3>
-  <p class="message"></p>
-</div>
-
 <form class="subscribe-form form" name="subscribe-form" method="post">
-  <!-- Vezetéknév és Keresztnév egy sorban -->
   <div class="row">
     <div class="input-group">
       <input type="text" id="last-name" name="last_name" placeholder=" " required />
@@ -24,7 +18,6 @@
     </div>
     </div>
 
-  <!-- Adatkezelési checkbox -->
   <div class="checkbox-group">
     <input type="checkbox" id="terms" required />
     <label for="terms">
@@ -32,6 +25,5 @@
     </label>
   </div>
 
-  <!-- Küldés gomb -->
   <button type="submit" class="submit-btn"><div class="loader-animation"></div>{{ esc_html__("Subscribe" , "makai") }}</button>
 </form>

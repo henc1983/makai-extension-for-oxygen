@@ -1,7 +1,5 @@
 node_modules/
-src/prompt.*
-src/scripts/prompt.*
-src/styles/prompt.*
+src/**/prompt.*
 src/scripts/_*
 src/scripts/components/_*
 src/styles/_*

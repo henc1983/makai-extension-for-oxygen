@@ -101,7 +101,7 @@ class Withrawalform extends \Breakdance\Elements\Element
 
     static function dependencies()
     {
-        return ['0' =>  ['scripts' => ['%%BREAKDANCE_REUSABLE_MEXWITHRAWAL%%','%%BREAKDANCE_REUSABLE_MEXFORMS%%'],'styles' => ['%%BREAKDANCE_REUSABLE_MEXFORMSCSS%%'],],];
+        return ['0' =>  ['scripts' => ['%%BREAKDANCE_REUSABLE_MEXWITHRAWAL%%'],'styles' => ['%%BREAKDANCE_REUSABLE_MEXFORMSCSS%%'],],];
     }
 
     static function settings()

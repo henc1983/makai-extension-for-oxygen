@@ -101,7 +101,7 @@ class Subscribenewsform extends \Breakdance\Elements\Element
 
     static function dependencies()
     {
-        return ['0' =>  ['scripts' => ['%%BREAKDANCE_REUSABLE_MEXFORMS%%'],'styles' => ['%%BREAKDANCE_REUSABLE_MEXFORMSCSS%%'],],];
+        return ['0' =>  ['scripts' => ['%%BREAKDANCE_REUSABLE_MEXSUBSCRIPTION%%'],'styles' => ['%%BREAKDANCE_REUSABLE_MEXFORMSCSS%%'],],];
     }
 
     static function settings()
