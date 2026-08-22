@@ -1,8 +1,6 @@
 <?php 
 
 
-
-
 add_action( 'breakdance_reusable_dependencies_urls', function ($urls) {
     
     $urls['mexsearchbar'] = MEX_PLUGIN_URI . '/assets/scripts/components/searchbar.js';

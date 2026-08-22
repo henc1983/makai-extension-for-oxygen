@@ -1,117 +1,21 @@
- .mex-ajax-searchbar {
-    position: relative;
-    width: 100%;
+.mex-ajax-searchbar.form-wrapper {
+  max-width: 450px;
+  margin-block: 0;
 }
 
-.mex-ajax-searchbar .result-container {
-    overflow-y: scroll;
-    max-height: 70vh;
-    width: 100%;
-    max-width: 500px;
+.mex-ajax-searchbar .row {
+  position: relative;
 }
 
-.mex-ajax-searchbar .result-container .item {
-    cursor: pointer;
-    display: flex;
-    text-decoration: none;
-    font-size: 14px;
-    background: #ffffff;
-    border-radius: 0.25em;
-    filter: drop-shadow(0 0 3px color-mix(in srgb, #000 16%, transparent));
+.mex-ajax-searchbar .submit-btn {
+  position: absolute;
+  right: 0;
+  color: #111;
+  padding: 0;
+  border-radius: 0;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center
 }
 
-.mex-ajax-searchbar .result-container .item:not(:last-child) {
-    margin-bottom: var(--padding-y);
-}
-
-.mex-ajax-searchbar .result-container .item * {
-    font-size: inherit;
-    font-weight: inherit;
-}
-
-.mex-ajax-searchbar .result-container .result-counter {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1.5em;
-}
-
-.mex-ajax-searchbar .result-container .result-counter > .results > .max-counter {
-    color: #bbbbbb;
-}
-
-.mex-ajax-searchbar .result-container .item > .image {
-    width: 80px;
-    height: 80px;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 0.25em;
-}
-
-.mex-ajax-searchbar .result-container .item > .info {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: 0.5em;
-    overflow: hidden;
-}
-
-.mex-ajax-searchbar .result-container .item > .info > .title {
-    white-space: nowrap;
-    overflow-x: clip;
-    margin-block: 0;
-    text-overflow: ellipsis;
-    max-width: 98%;
-}
-
-.mex-ajax-searchbar .result-container .item > .info > .price {
-    display: flex;
-    gap: 0.25em;
-    flex: 1;
-    align-items: end;
-    justify-content: end;
-}
-
-.mex-ajax-searchbar .result-container .item > .info > .price *{
-    text-decoration: none;
-    color: var(--primary-color);
-    font-size: 16px;
-}
-
-.mex-ajax-searchbar .result-container .item > .info > .price .woocommerce-Price-amount.amount {
-    font-size: 12px;
-}
-
-.mex-ajax-searchbar .result-container.active, .mex-ajax-searchbar .result-container.show {
-    transform: translate(-50%, 0);
-    opacity: 1;
-    visibility: visible;
-}
-
-.mex-ajax-searchbar .input-field,
-.mex-ajax-searchbar [type="submit"],
-.mex-ajax-searchbar:focus-within .input-field,
-.mex-ajax-searchbar:focus-within [type="submit"] {
-    outline: none;
-    border: none;
-    background: transparent;
-    height: 100%;
-    padding: var(--padding-y);
-}
-
-.mex-ajax-searchbar .input-field {
-    flex: 1;
-}
-
-
-.mex-ajax-searchbar .search-form {
-    margin-inline: auto;
-    background: #fff;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    box-shadow: 0 0 2px 1px color-mix(in srgb, var(--primary-color) 30%, transparent);
-}
-
-.mex-ajax-searchbar:focus-within .search-form {
-    box-shadow: 0 0 2px 1px color-mix(in srgb, var(--primary-color) 70%, transparent);
-}

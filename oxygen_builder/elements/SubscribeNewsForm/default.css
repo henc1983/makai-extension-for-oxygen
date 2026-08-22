@@ -1,7 +1,6 @@
  .mex-subscribe-news-form .submit-btn {
    display: flex;
    flex-wrap: nowrap;
-   background: var(--primary-color);
    transition: all .2s;
  }
  .mex-subscribe-news-form .submit-btn .loader-animation {

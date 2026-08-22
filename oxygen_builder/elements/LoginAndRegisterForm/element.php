@@ -7,15 +7,15 @@ use function Breakdance\Elements\PresetSections\getPresetSection;
 
 
 \Breakdance\ElementStudio\registerElementForEditing(
-    "MakaiExtensions\\Ajaxsearchbar",
+    "MakaiExtensions\\Loginandregisterform",
     \Breakdance\Util\getdirectoryPathRelativeToPluginFolder(__DIR__)
 );
 
-class Ajaxsearchbar extends \Breakdance\Elements\Element
+class Loginandregisterform extends \Breakdance\Elements\Element
 {
     static function uiIcon()
     {
-        return 'SearchIcon';
+        return 'SquareIcon';
     }
 
     static function tag()
@@ -35,12 +35,12 @@ class Ajaxsearchbar extends \Breakdance\Elements\Element
 
     static function name()
     {
-        return 'Ajax Searchbar Width Result Window';
+        return 'LoginAndRegisterForm';
     }
 
     static function className()
     {
-        return 'mex-ajax-searchbar';
+        return 'mex-login-and-register-form';
     }
 
     static function category()
@@ -101,7 +101,7 @@ class Ajaxsearchbar extends \Breakdance\Elements\Element
 
     static function dependencies()
     {
-        return ['0' =>  ['scripts' => ['%%BREAKDANCE_REUSABLE_MEXSEARCHBAR%%'],'styles' => ['%%BREAKDANCE_REUSABLE_MEXFORMSCSS%%'],],];
+        return ['0' =>  ['styles' => ['%%BREAKDANCE_REUSABLE_MEXFORMSCSS%%'],],];
     }
 
     static function settings()
@@ -157,7 +157,7 @@ class Ajaxsearchbar extends \Breakdance\Elements\Element
 
     static function additionalClasses()
     {
-        return [['name' => 'form-wrapper', 'template' => 'no'], ['name' => 'small', 'template' => 'no']];
+        return false;
     }
 
     static function projectManagement()

@@ -1,17 +1,7 @@
-.mex-withrawal > .form .radio-btn.checked {
-  background-color: var(--secondary-color);
-  color: white;
-}
-
 .mex-withrawal > .form .submit-btn {
   display: flex;
   flex-wrap: nowrap;
-  background-color: var(--secondary-color);
   transition: all 0.2s;
-}
-
-.mex-withrawal > .form .submit-btn:hover {
-  background-color: color-mix(in srgb,  var(--secondary-color) 80%, #fff);
 }
 
 .mex-withrawal > .form .loader-animation {

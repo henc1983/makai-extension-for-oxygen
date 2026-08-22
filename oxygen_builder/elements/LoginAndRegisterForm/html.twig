@@ -1,0 +1,38 @@
+<section class="form-toggle-container">
+
+<div class="inner-container">
+    <div class="form-wrapper mex-login-register-form">
+        <form name="login-form form" method="post">
+
+        </form>
+    </div>
+</div>
+
+<div class="inner-container">
+    <div class="form-wrapper mex-login-register-form">
+        <form name="register-form" class="register-form form" method="post" name="register-form">
+            <div class="input-group-wrapper">
+            <div class="input-group">
+                <input type="text" id="login-name" name="login_name" placeholder=" " required />
+                <label for="login-name"> {{ esc_html__("Name or email" , "makai" ) }} <span class="required">*</span></label>
+            </div>
+            <div class="input-group">
+                <input type="text" id="login-password" name="login_password" placeholder=" " required />
+                <label for="login-password">{{ esc_html__("Password" , "makai" ) }} <span class="required">*</span></label>
+            </div>
+            </div>
+
+            <div class="checkbox-group">
+    <input type="checkbox" id="login-remember-me" />
+    <label for="login-remember-me">
+
+  
+  {{ esc_html__("Remember me", "makai") }}
+    </label>
+  </div>
+        </form>
+    </div>
+</div>
+
+
+</section>

@@ -1,14 +1,21 @@
-<form class="search-form" method="post" role="search" title="{{ esc_html__('Search...', 'makai') }}">
-    <input class="input-field" name="s" placeholder="{{ esc_attr__('Search', 'makai') }}" value="{{ search_query|default('') }}" autocomplete="off">
+<form class="search-form form" method="post" role="search" title="{{ esc_html__('Search...', 'makai') }}">
+    
+    <div class="row">
+        <div class="input-group">
+            <input class="input-field" name="s" placeholder=" " value="{{ search_query|default('') }}" autocomplete="off">
+            <label> {{ esc_html__('Search', 'makai') }} </label>
+        </div>
+
+        <button class="submit-btn" type="submit">
+            <div class="loader-animation"></div>
+            <i class="icon far fa-search"></i>
+        </button>
+    </div>
   
     
     <input type="hidden" value="product" name="post_type">
 
-    <div class="loader-animation"></div>
   
-    <button class="submit" type="submit">
-        <i class="icon far fa-search"></i>
-    </button>
 </form>
   
 <div class="result-container modal-filters"></div>

@@ -86,7 +86,34 @@ class Subscribenewsform extends \Breakdance\Elements\Element
 
     static function designControls()
     {
-        return [];
+        return [c(
+        "submit_button",
+        "Submit Button",
+        [c(
+        "background",
+        "Background",
+        [],
+        ['type' => 'color', 'layout' => 'inline', 'colorOptions' => ['type' => 'solidOnly']],
+        true,
+        true,
+        [],
+        
+      ), c(
+        "text",
+        "Text",
+        [],
+        ['type' => 'color', 'layout' => 'inline'],
+        true,
+        true,
+        [],
+        
+      )],
+        ['type' => 'section'],
+        false,
+        false,
+        [],
+        
+      )];
     }
 
     static function contentControls()
