@@ -15,6 +15,14 @@ add_action( 'wp_body_open' , '\MakaiExtensions\Snippets\mediaquery_helper_html' 
 
 function mediaquery_helper_html() {    
     
+	if ( defined( 'SHOW_CT_BUILDER' ) 
+		|| isset( $_GET['ct_builder'] ) 
+		|| isset( $_GET['oxygen_iframe'] ) 
+		|| isset( $_GET['oxygen'] ) 
+		|| isset( $_GET['breakdance_iframe'] ) ) {
+        return;
+    }
+
     $value = $_SESSION['mex_screen_size'] ?? 'desktop';
 
     ob_start();
@@ -25,6 +33,9 @@ function mediaquery_helper_html() {
 		</form>
 		<script id="mex-mediaquery-form-check-script">
 			(function($){
+
+				console.log('Ez a kód nem fut le az Oxygen 6 editorban.');
+
 				const $screenForm = $("form[id='mex-mediaquery-form']");
 				
 				if (!$screenForm.length) return;

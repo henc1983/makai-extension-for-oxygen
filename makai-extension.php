@@ -29,29 +29,16 @@ define( 'MEX_PLUGIN_URI' , untrailingslashit( plugin_dir_url( __FILE__ ) ) );
 
 
 
-// Start session if not exists
-if ( session_status() === PHP_SESSION_NONE ) {
-    session_start();
-}
-
-
-
-// Set MediaQuery Helper session to default is not exists
-if ( !isset( $_SESSION['mex_screen_size'] ) ) { 
-    $_SESSION['mex_screen_size'] = 'desktop';
-}
-
-
-
-
 // Including files
+require_once MEX_PLUGIN_DIR . '/inc/init.php';
 require_once MEX_PLUGIN_DIR . '/inc/functions.php';
 require_once MEX_PLUGIN_DIR . '/inc/requests.php';
 require_once MEX_PLUGIN_DIR . '/inc/snippets.php';
 require_once MEX_PLUGIN_DIR . '/inc/enqueue.php';
 require_once MEX_PLUGIN_DIR . '/inc/ajax_handlers.php';
 require_once MEX_PLUGIN_DIR . '/inc/elements_register.php';
-require_once MEX_PLUGIN_DIR . '/inc/dependencies.php';
+require_once MEX_PLUGIN_DIR . '/inc/pre_get_posts.php';
+
 
 if( is_admin() ) {
     require_once MEX_PLUGIN_DIR . '/inc/update.php';

@@ -1,1 +1,19 @@
-%%SELECTOR%% { }
+%%SELECTOR%% .woocommerce-pagination li .page-numbers {
+  background: {{ design.pagination.inactive }};
+  color: {{ design.pagination.inactive_text }};
+  border-radius: {{ design.pagination.border_radius.style }};
+}
+
+%%SELECTOR%% .woocommerce-pagination li .page-numbers.current {
+  color: {{ design.pagination.current_text }};
+  background: {{ design.pagination.current }};
+}
+
+%%SELECTOR%%.mex-products-loop .products {
+  row-gap: {{ design.grid.gap_y.style }};
+  column-gap: {{ design.grid.gap_x.style }};
+}
+
+%%SELECTOR%% {
+{{ macros.spacing_padding_all(design.grid.padding) }}
+}

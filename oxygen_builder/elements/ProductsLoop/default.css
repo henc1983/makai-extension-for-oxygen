@@ -1,1 +1,38 @@
- 
+.mex-products-loop ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mex-products-loop .products {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.mex-products-loop .products .product {
+    display: flex;
+    grid-column: span 4 / span 4;
+}
+
+.mex-products-loop .woocommerce-pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.mex-products-loop .woocommerce-pagination ul.page-numbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+}
+
+.mex-products-loop .woocommerce-pagination li .page-numbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    width: 36px;
+    padding: 1em;
+    text-decoration: none;
+    color: inherit;
+}

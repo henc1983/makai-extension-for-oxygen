@@ -35,7 +35,7 @@ class Productsloop extends \Breakdance\Elements\Element
 
     static function name()
     {
-        return 'ProductsLoop';
+        return 'Products Loop';
     }
 
     static function className()
@@ -86,12 +86,116 @@ class Productsloop extends \Breakdance\Elements\Element
 
     static function designControls()
     {
-        return [];
+        return [c(
+        "pagination",
+        "Pagination",
+        [c(
+        "inactive",
+        "Inactive",
+        [],
+        ['type' => 'color', 'layout' => 'inline'],
+        false,
+        false,
+        [],
+        
+      ), c(
+        "inactive_text",
+        "Inactive Text",
+        [],
+        ['type' => 'color', 'layout' => 'inline'],
+        false,
+        false,
+        [],
+        
+      ), c(
+        "current",
+        "Current",
+        [],
+        ['type' => 'color', 'layout' => 'inline'],
+        false,
+        false,
+        [],
+        
+      ), c(
+        "current_text",
+        "Current Text",
+        [],
+        ['type' => 'color', 'layout' => 'inline'],
+        false,
+        false,
+        [],
+        
+      ), c(
+        "border_radius",
+        "Border Radius",
+        [],
+        ['type' => 'unit', 'layout' => 'inline'],
+        false,
+        false,
+        [],
+        
+      )],
+        ['type' => 'section'],
+        false,
+        false,
+        [],
+        
+      ), c(
+        "grid",
+        "Grid",
+        [c(
+        "gap_x",
+        "Gap X",
+        [],
+        ['type' => 'unit', 'layout' => 'inline', 'unitOptions' => ['types' => ['px', 'rem', 'em', 'custom'], 'defaultType' => 'px']],
+        true,
+        false,
+        [],
+        
+      ), c(
+        "gap_y",
+        "Gap Y",
+        [],
+        ['type' => 'unit', 'layout' => 'inline', 'unitOptions' => ['types' => ['px', 'rem', 'em', 'custom'], 'defaultType' => 'px']],
+        true,
+        false,
+        [],
+        
+      ), getPresetSection(
+      "EssentialElements\\spacing_padding_all",
+      "Padding",
+      "padding",
+       ['type' => 'popout']
+     )],
+        ['type' => 'section'],
+        false,
+        false,
+        [],
+        
+      )];
     }
 
     static function contentControls()
     {
-        return [];
+        return [c(
+        "content",
+        "Content",
+        [c(
+        "post",
+        "Post",
+        [],
+        ['type' => 'global_block_chooser', 'layout' => 'vertical'],
+        false,
+        false,
+        [],
+        ['accepts' => 'string', 'proOnly' => false]
+      )],
+        ['type' => 'section', 'layout' => 'vertical'],
+        false,
+        false,
+        [],
+        
+      )];
     }
 
     static function settingsControls()
@@ -172,6 +276,6 @@ class Productsloop extends \Breakdance\Elements\Element
 
     static function propertyPathsToSsrElementWhenValueChanges()
     {
-        return false;
+        return ['content.content.post'];
     }
 }
