@@ -1,12 +1,13 @@
 <?php
 
+
 $block = $propertiesData['content']['content']['post'] ?? false;
 
 
 if ( have_posts() ) :
-
+    
     ?>
-    <div class="products-container">
+    <div class="products-container <?php echo get_query_var( 'layout' ); ?>-layout">
 
         <div class="results-wrapper">
 

@@ -13,8 +13,8 @@ add_action( 'wp_body_open' , '\MakaiExtensions\Snippets\mediaquery_helper_html' 
 
 
 
-function mediaquery_helper_html() {    
-    
+function mediaquery_helper_html() {
+
 	if ( defined( 'SHOW_CT_BUILDER' ) 
 		|| isset( $_GET['ct_builder'] ) 
 		|| isset( $_GET['oxygen_iframe'] ) 
@@ -23,7 +23,7 @@ function mediaquery_helper_html() {
         return;
     }
 
-    $value = $_SESSION['mex_screen_size'] ?? 'desktop';
+    $value = $GLOBALS['mex_screen_size'];
 
     ob_start();
 

@@ -8,12 +8,60 @@ namespace MakaiExtensions\PreGetPosts;
 
 function custom_woocommerce_products_per_page( $query ) {
 
-    // Csak a weboldal elején (nem az adminban), és csak a fő WooCommerce terméklistán fusson le
-
-    if ( ! is_admin() && $query->is_main_query() && ( is_shop() || is_product_category() || is_product_tag() ) ) {
-        $query->set( 'posts_per_page', 12 );
+    if ( is_admin() || !($query->is_main_query()) || ( !is_shop() && !is_product_category() && !is_product_tag() ) ) {
+        return;
     }
 
+
+    $product_per_page = $GLOBALS['mex_products_per_page'];
+    
+    $layout = $GLOBALS['mex_layout'];
+    $orderby = $GLOBALS['mex_orderby'];
+    
+    $price_filter = $GLOBALS['mex_price_filter'];
+    $min_price = $GLOBALS['mex_minprice'];
+    $max_price = $GLOBALS['mex_maxprice'];
+
+    if ( ! is_admin() && $query->is_main_query() && ( is_shop() || is_product_category() || is_product_tag() ) ) {
+    }
+    
+    $meta_query = $query->get('meta_query');
+
+    if ( ! is_array( $meta_query ) ) {
+        $meta_query = [];
+    }
+
+    if ( $price_filter && !( $min_price == 0 ) && !( $min_price == 0 ) ) {
+    
+        if ( !( $min_price == 0 ) ) {
+            
+            $meta_query[] = array(
+                'key'     => '_price',
+                'value'   => $min_price,
+                'compare' => '>=',
+                'type'    => 'NUMERIC',
+            );
+
+        }
+        
+        if ( !( $max_price == 0 ) ) {
+            
+            $meta_query[] = array(
+                'key'     => '_price',
+                'value'   => $max_price,
+                'compare' => '<=',
+                'type'    => 'NUMERIC',
+            );
+
+        }
+
+
+    }
+
+
+    $query->set( 'layout', $layout );
+    $query->set( 'posts_per_page', $product_per_page );
+    $query->set( 'meta_query', $meta_query );
 
 }
 add_action( 'pre_get_posts', '\MakaiExtensions\PreGetPosts\custom_woocommerce_products_per_page' );
