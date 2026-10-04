@@ -19,17 +19,17 @@ if ( have_posts() ) :
 
             <span class="results">Nehany termek megjelenitve</span>
 
-            <div class="view form-wrapper small">
+            <div id="mex-view-layout" class="mex-view-layout form-wrapper">
                 <form method="post" class="form" action="" id="mex-view-switch">
                     <div class="radio-section">
                         <div class="radio-options">
-                            <label class="radio-btn checked">
+                            <label class="radio-btn <?php echo $layout == "grid" ? "checked" : "" ; ?>">
                                 <input type="radio" name="mex-layout" value="grid" <?php echo $layout == "grid" ? "checked" : "" ; ?> />
-                                <i class="far fa-table"></i>
+                                <i class="far fa-grid"></i>
                             </label>
-                            <label class="radio-btn ">
+                            <label class="radio-btn <?php echo $layout == "row" ? "checked" : "" ; ?>">
                                 <input type="radio" name="mex-layout" value="row" <?php echo $layout == "row" ? "checked" : "" ; ?> />
-                                <i class="far fa-table-rows"></i>
+                                <i class="far fa-bars"></i>
                             </label>
                         </div>
                     </div>

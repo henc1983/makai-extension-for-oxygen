@@ -4,6 +4,27 @@
   padding: 0;
 }
 
+.mex-products-loop > .products-container > .results-wrapper > .mex-view-layout {
+    max-width: unset;
+    margin: 0;
+}
+
+.mex-products-loop > .products-container > .results-wrapper > .mex-view-layout .radio-options {
+    gap: 4px;
+}
+
+.mex-products-loop > .products-container > .results-wrapper > .mex-view-layout .radio-btn {
+    gap: 0;
+    padding: 4px;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 4px;
+}
+
+.mex-products-loop > .products-container > .results-wrapper > .mex-view-layout .radio-btn.checked {
+    border-color: #000
+}
+
 .mex-products-loop > .products-container > .results-wrapper {
     display: flex;
     width: 100%;
@@ -12,7 +33,7 @@
 
 .mex-products-loop > .products-container > .results-wrapper > .vertical-divider {
     height: 1em;
-    margin-block: auto;
+    margin: auto 4px;
     width: 2px;
     display: inline-block;
     background: rgba( 0, 0, 0, 0.5 );

@@ -8,13 +8,23 @@ class LayoutForm extends MexForms {
         
         
     }
+
+    radioBtnChange(e) {
+        this.radioBtns.forEach( (btn) => {
+            btn.classList.remove('checked');
+        });
+
+        const newBtn = e.target.closest('.radio-btn');
+        newBtn.classList.add('checked');
+
+        this.form.submit();
+    }
 }
 
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const layout = document.getElementById('mex-view-layout');
+    const layout = document.querySelector('.mex-view-layout');
 
     new LayoutForm( layout );
-    console.log("hello mi?");
 });

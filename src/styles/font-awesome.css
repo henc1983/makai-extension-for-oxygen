@@ -74,8 +74,12 @@
     content: "\f00d";
 }
 
-.fa-bars::before {
+.fa-bars-staggered::before {
     content: "\f550";
+}
+
+.fa-bars::before {
+    content: "\f0c9";
 }
 
 .fa-rotate-left::before {
@@ -100,6 +104,10 @@
 
 .fa-infinity::before {
     content: "\f534";
+}
+
+.fa-grid::before {
+    content: "\e195";
 }
 
 .fa-table::before {

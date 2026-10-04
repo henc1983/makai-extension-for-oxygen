@@ -30,7 +30,6 @@ define( 'MEX_PLUGIN_URI' , untrailingslashit( plugin_dir_url( __FILE__ ) ) );
 
 
 // Including files
-require_once MEX_PLUGIN_DIR . '/inc/plugin_loaded.php';
 require_once MEX_PLUGIN_DIR . '/inc/init.php';
 require_once MEX_PLUGIN_DIR . '/inc/dependencies.php';
 require_once MEX_PLUGIN_DIR . '/inc/functions.php';
