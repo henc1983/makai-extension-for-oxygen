@@ -1,21 +1,43 @@
 <?php
 
 
-$block = $propertiesData['content']['content']['post'] ?? false;
+$block_grid = $propertiesData['content']['content']['grid'] ?? false;
+$block_row = $propertiesData['content']['content']['row'] ?? false;
+$layout = get_query_var( 'layout' );
+
+$rendered_block = $layout == 'grid' ? $block_grid : $block_row;
+
+$id = "mex-view-switch-radio-layout";
 
 
 if ( have_posts() ) :
     
     ?>
-    <div class="products-container <?php echo get_query_var( 'layout' ); ?>-layout">
+    <div class="products-container <?php echo $layout; ?>-layout">
 
         <div class="results-wrapper">
 
-            <div class="results">
-                
+            <span class="results">Nehany termek megjelenitve</span>
+
+            <div class="view form-wrapper small">
+                <form method="post" class="form" action="" id="mex-view-switch">
+                    <div class="radio-section">
+                        <div class="radio-options">
+                            <label class="radio-btn checked">
+                                <input type="radio" name="mex-layout" value="grid" <?php echo $layout == "grid" ? "checked" : "" ; ?> />
+                                <i class="far fa-table"></i>
+                            </label>
+                            <label class="radio-btn ">
+                                <input type="radio" name="mex-layout" value="row" <?php echo $layout == "row" ? "checked" : "" ; ?> />
+                                <i class="far fa-table-rows"></i>
+                            </label>
+                        </div>
+                    </div>
+                </form>
             </div>
 
-            <div class="ordering"></div>
+            <span class="vertical-divider"></span>
+            <span class="ordering"></span>
 
         </div>
         
@@ -23,7 +45,7 @@ if ( have_posts() ) :
         <?php while ( have_posts() ) : the_post(); ?>
 
             <li class="product">
-            <?php echo \Breakdance\Render\renderGlobalBlock($block); ?>
+            <?php echo \Breakdance\Render\renderGlobalBlock($rendered_block); ?>
             </li>
 
         <?php endwhile; ?>

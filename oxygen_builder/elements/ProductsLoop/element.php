@@ -181,8 +181,17 @@ class Productsloop extends \Breakdance\Elements\Element
         "content",
         "Content",
         [c(
-        "post",
-        "Post",
+        "grid",
+        "Grid",
+        [],
+        ['type' => 'global_block_chooser', 'layout' => 'vertical'],
+        false,
+        false,
+        [],
+        ['accepts' => 'string', 'proOnly' => false]
+      ), c(
+        "row",
+        "Row",
         [],
         ['type' => 'global_block_chooser', 'layout' => 'vertical'],
         false,
@@ -205,7 +214,7 @@ class Productsloop extends \Breakdance\Elements\Element
 
     static function dependencies()
     {
-        return false;
+        return ['0' =>  ['styles' => ['%%BREAKDANCE_REUSABLE_MEXFONTAWESOMECSS%%'],'scripts' => ['%%BREAKDANCE_REUSABLE_MEXLAYOUT%%'],],'1' =>  ['styles' => ['%%BREAKDANCE_REUSABLE_MEXFORMSCSS%%'],],];
     }
 
     static function settings()
@@ -276,6 +285,6 @@ class Productsloop extends \Breakdance\Elements\Element
 
     static function propertyPathsToSsrElementWhenValueChanges()
     {
-        return ['content.content.post'];
+        return false;
     }
 }

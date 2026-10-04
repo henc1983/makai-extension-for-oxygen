@@ -101,3 +101,11 @@
 .fa-infinity::before {
     content: "\f534";
 }
+
+.fa-table::before {
+    content: "\f0ce";
+}
+
+.fa-table-rows::before {
+    content: "\e292";
+}

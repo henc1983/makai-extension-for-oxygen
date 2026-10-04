@@ -13,7 +13,7 @@ const gulp          = require("gulp"),
     CSSFILES      = [ 'main', 'font-awesome' ],
     JSFILES       = [ 'main', 'shop' ];
     COMPONENT_CSSFILES = [ 'forms' ];
-    COMPONENT_JSFILES = [ 'searchbar', 'dropdown', 'withrawal', 'subscribe' ];
+    COMPONENT_JSFILES = [ 'searchbar', 'dropdown', 'withrawal', 'subscribe' , 'layout' ];
 
 JSFILES.forEach( (js) => {
     gulp.task( `dev:js-${js}`, () => {
