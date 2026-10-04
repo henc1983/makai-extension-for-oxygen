@@ -10,8 +10,20 @@ $rendered_block = $layout == 'grid' ? $block_grid : $block_row;
 $id = "mex-view-switch-radio-layout";
 
 
+$catalog_options = [
+    'menu_order' => __( 'Default' , 'mex' ),
+    'date-DESC' => __( 'New to old' , 'mex' ),
+    'date-ASC' => __( 'Old to new' , 'mex' ),
+    'title-ASC' => __( 'Sort by Title (A-Z)' , 'mex' ),
+    'title-DESC' => __( 'Sort by Title (Z-A)' , 'mex' ),
+    'price-ASC' => __( 'Price low to high' , 'mex' ),
+    'price-DESC' => __( 'Price high to low' , 'mex' ),
+];
+
+$catalog_option_checked = ( $GLOBALS['mex_orderby'] == 'menu_ordering' ) ? $GLOBALS['mex_orderby'] : $GLOBALS['mex_orderby'].'-'.$GLOBALS['mex_ordering'];
+
 if ( have_posts() ) :
-    
+
     ?>
     <div class="products-container <?php echo $layout; ?>-layout">
 
@@ -36,8 +48,19 @@ if ( have_posts() ) :
                 </form>
             </div>
 
-            <span class="vertical-divider"></span>
-            <span class="ordering"></span>
+            <span class="ordering">
+                <div class="mex-orderby-form form-wrapper">
+                    <form method="post" class="form" action="" id="woocommerce-ordering">
+                        <select name="mex-orderby" class="orderby">
+
+                            <?php foreach( $catalog_options as $value => $title) : ?>
+                                <option <?php echo ($catalog_option_checked == $value) ? "selected" : ""; ?> value="<?php echo esc_attr( $value ); ?>"><?php echo esc_html( $title ); ?></option>
+                            <?php endforeach; ?>
+
+                        </select>
+                    </form>
+                </div>
+            </span>
 
         </div>
         

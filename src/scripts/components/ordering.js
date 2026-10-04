@@ -22,9 +22,21 @@ class LayoutForm extends MexForms {
 }
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const layout = document.querySelector('.mex-view-layout');
+    const orderForm = document.querySelector('#woocommerce-ordering');
 
-    new LayoutForm( layout );
+    if(layout) {
+        new LayoutForm( layout );
+    }
+
+    if(orderForm) {
+        const selection = orderForm.querySelector('select[name="mex-orderby"]');
+
+        selection.onchange = (e) => {
+            orderForm.submit();
+        }
+    }
 });

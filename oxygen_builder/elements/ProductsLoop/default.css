@@ -4,13 +4,30 @@
   padding: 0;
 }
 
-.mex-products-loop > .products-container > .results-wrapper > .mex-view-layout {
+.mex-products-loop > .products-container > .results-wrapper .orderby {
+    padding: 4px 8px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg height=".75em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    border-radius: 4px;
+  
+}
+
+.mex-products-loop > .products-container > .results-wrapper > .results {
+    margin-right: auto;
+}
+
+.mex-products-loop > .products-container > .results-wrapper .form-wrapper {
     max-width: unset;
     margin: 0;
 }
 
 .mex-products-loop > .products-container > .results-wrapper > .mex-view-layout .radio-options {
-    gap: 4px;
+    gap: 8px;
+    margin-right: 1rem;
 }
 
 .mex-products-loop > .products-container > .results-wrapper > .mex-view-layout .radio-btn {
@@ -29,14 +46,7 @@
     display: flex;
     width: 100%;
     margin-block: 2rem;
-}
-
-.mex-products-loop > .products-container > .results-wrapper > .vertical-divider {
-    height: 1em;
-    margin: auto 4px;
-    width: 2px;
-    display: inline-block;
-    background: rgba( 0, 0, 0, 0.5 );
+    align-items: center;
 }
 
 .mex-products-loop > .products-container > .products {

@@ -22,6 +22,7 @@ function globals() {
     $GLOBALS['mex_onsale'] = $_SESSION['mex_onsale'] ?? false;
     $GLOBALS['mex_layout'] = $_SESSION['mex_layout'] ?? 'grid';
     $GLOBALS['mex_orderby'] = $_SESSION['mex_orderby'] ?? 'menu_order';
+    $GLOBALS['mex_ordering'] = $_SESSION['mex_ordering'] ?? 'DESC';
     $GLOBALS['mex_price_filter'] = $_SESSION['mex_price_filter'] ?? false;
     $GLOBALS['mex_minprice'] = $_SESSION['mex_minprice'] ?? 0;
     $GLOBALS['mex_maxprice'] = $_SESSION['mex_maxprice'] ?? 0;

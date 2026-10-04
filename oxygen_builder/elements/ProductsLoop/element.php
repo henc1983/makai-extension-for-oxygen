@@ -214,7 +214,7 @@ class Productsloop extends \Breakdance\Elements\Element
 
     static function dependencies()
     {
-        return ['0' =>  ['styles' => ['%%BREAKDANCE_REUSABLE_MEXFONTAWESOMECSS%%'],'scripts' => ['%%BREAKDANCE_REUSABLE_MEXLAYOUT%%'],],'1' =>  ['styles' => ['%%BREAKDANCE_REUSABLE_MEXFORMSCSS%%'],],];
+        return ['0' =>  ['styles' => ['%%BREAKDANCE_REUSABLE_MEXFONTAWESOMECSS%%'],'scripts' => ['%%BREAKDANCE_REUSABLE_MEXORDERING%%'],],'1' =>  ['styles' => ['%%BREAKDANCE_REUSABLE_MEXFORMSCSS%%'],],];
     }
 
     static function settings()
